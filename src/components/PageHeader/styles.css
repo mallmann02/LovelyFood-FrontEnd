@@ -1,0 +1,85 @@
+#page-header{
+    background-image: url('../../assets/images/topBarImage.png');
+    width: 100vw;
+    height: 14.4rem;
+
+    top: 0px;
+
+    position: fixed;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+    #page-header g{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #page-header img{
+        margin-left: 20px;
+        
+        width: 12rem;
+        height: 12rem;
+    }
+
+    #page-header li{ 
+        position: relative; 
+        float: left;
+        
+        margin-top: -25px;     
+        margin-left: 30px;
+        
+        list-style: none;
+       
+        cursor: pointer;
+
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    #page-header li + li{
+        margin-left: 10px;
+    }
+    
+    #page-header li a{color: #441400; font-size:1.6rem; border-radius: 10%; transition: background 0.3s; font-family: Poppins, sans-serif; text-decoration:none; padding:5px 10px; display:flex;}
+     
+    #page-header li a:hover{
+    background:#EBCDE8; 
+    color: #fff; 
+    -moz-box-shadow:0 3px 10px 0 #CCC; 
+    text-shadow:0px 0px 5px #fff;
+    transition: background 0.5s; 
+    }
+ 
+    #page-header li:hover ul, #page-header li.over ul{display:block;}
+    
+    #page-header li ul li{
+        border:1px solid #04fd2e; 
+        display:block; 
+        width:150px;
+    }
+
+    #page-header .shopping-cart-link {
+       margin-right: 70px;
+       color: #fff;
+       
+       margin-top: -25px;
+       display: flex;
+       flex-direction: row;
+       gap: 10px;
+       align-items: center;
+       text-decoration: none;
+    }
+    
+    @media (max-width: 1400px){
+        #page-header li a{
+            font-size: 1.4rem;
+        }
+    }

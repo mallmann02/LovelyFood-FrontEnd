@@ -1,0 +1,150 @@
+#page-contact{
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.contact-main{
+    position: block;
+    margin-top: 200px;
+    
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-main > img{
+    width: 650px;
+    height: 650px;
+}
+
+.contact-form {
+    margin-left: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input + label{
+    margin-top: 15px;
+}
+
+.contact-form form{
+    margin-top: 20px;
+
+    color: var(--color-text-title);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form h3{
+    color: var(--color-text-title);
+
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.contact-form form input {
+    background-color: #F1DEF1;
+    
+    height: 4.5rem;
+    width: 30rem;
+
+    border: 2px solid var(--color-text-title);
+    border-radius: 5px;
+
+    padding-left: 10px;
+}
+
+.contact-form form textarea {
+    background-color: #F1DEF1;
+    
+    min-height: 10rem;
+
+    border: 2px solid var(--color-text-title);
+    border-radius: 5px;
+
+    padding-left: 10px;
+    padding-top: 10px;
+
+    overflow: hidden;
+    
+    resize: vertical;
+    max-height: 13rem;
+}
+
+.contact-footer {
+   margin-top: 50px;
+   padding: 20px;
+
+   display: flex;
+   flex-direction: column;
+
+   background-color: #441400;
+
+   justify-content: center;
+   align-items: center;
+}
+
+.footer-header {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: -40px;
+
+    padding: 5px 20px;
+
+    border: 3px solid #000;
+    border-radius: 5px;
+
+    background-color: var(--color-background);
+    color: #000;
+}
+
+.social-media-options {
+    display: flex;
+    flex-direction: row;
+
+    width: 42rem;
+
+    justify-content: space-between;
+
+    padding-top: 20px;
+}
+
+.social-media-options section{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.social-media-options section a {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.8rem;
+
+    margin-top: 7px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+@media (max-width: 1400px) {
+    
+    .contact-main{
+        margin-top: 300px;
+    }
+    
+    .contact-main > img {
+        width: 45rem;
+        height: 43rem;
+    }
+}

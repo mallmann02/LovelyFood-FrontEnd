@@ -1,0 +1,101 @@
+#page-shopping-cart {
+    position: static;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: 30rem;
+}
+
+.page-shopping-cart-main {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10rem;
+}
+
+.page-shopping-cart-main header {
+    background-color: #FFF;
+    
+    color: var(--color-background);
+
+    padding: 1.6rem;
+    border-radius: 8px;
+
+    font-size: 2.6rem;
+    width: fit-content;
+}
+
+.products-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10rem;
+}
+
+.products-list {
+    width: 70%;
+
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+
+    border: 2px solid #BE9D29;
+    border-radius: 5px;
+}
+
+#cart-product + #cart-product {
+    border-top: 2px dotted #000;
+}
+
+.products-list-empty-warning {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.products-total-cost {
+    position: fixed;
+
+    right: 10rem;
+    bottom: 20rem;
+
+    width: 15%;
+}
+
+.products-total-cost div {
+    background-color: #c4c4c4;
+    color: #000;
+
+    display: flex;
+    justify-content: center;
+
+    font-weight: bold;
+    padding: 20px;
+
+    border-radius: 5px;
+}
+
+.products-total-cost div p {
+    font-size: 1.7rem;
+}
+
+.products-total-cost button {
+    border: none;
+
+    background-color: #41B52F;
+    color: #FFF;
+
+    font-size: 1.8rem;
+
+    padding: 5px;
+
+    width: 100%;
+
+    cursor: pointer;
+}

@@ -7,9 +7,7 @@ import LogoImg from '../../assets/images/LogoImg.png';
 
 import './styles.css';
 
-const PageHeader: React.FC = () => {
-  const length = useSelector((state: RootStateOrAny) => state.cart.length)
-  
+const PageHeader: React.FC = () => {  
   return (
     <div id="page-header">
       <g>

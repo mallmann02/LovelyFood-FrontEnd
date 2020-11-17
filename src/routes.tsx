@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Bakery from './pages/Bakery';
 import ShoppingCart from './pages/ShoppingCart';
+import Admin from './pages/Admin';
 
 function Routes() {
     return (
@@ -17,6 +18,8 @@ function Routes() {
             <Route path="/bakery" component={Bakery}/>
 
             <Route path="/shopping-cart" component={ShoppingCart}/>
+
+            <Route path='/admin' component={Admin}/>
         </BrowserRouter>
     )
 }

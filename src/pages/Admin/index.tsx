@@ -34,9 +34,10 @@ const Admin: React.FC = () => {
         data.append('disponibility', String(disponibility))
     
         images.forEach(image => {
-          data.append('images', image)
+          data.append('image', image)
         });
     
+        console.log(images)
         await api.post('products', data);
     }
 

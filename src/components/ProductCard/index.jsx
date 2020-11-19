@@ -3,14 +3,12 @@ import { FiMoreHorizontal, FiShoppingBag } from 'react-icons/fi';
 
 import './styles.css';
 
-const ProductCard = ({onClickShop, onClickDetailButton, name, disponibility, cost, image, holeProduct}) => {
+const ProductCard = ({onClickDetailButton, name, disponibility, cost, image}) => {
 
   return (
       <div id="product-card">
           <section className="card-actions">
               <FiMoreHorizontal size={20} onClick={onClickDetailButton} cursor="pointer"/>
-
-              <FiShoppingBag size={20} onClick={() => onClickShop(holeProduct)} cursor="pointer"/>
           </section>
           
           <img src={image} alt={name+" Photo"} width={120} height={120}/>

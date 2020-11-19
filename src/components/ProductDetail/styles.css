@@ -20,7 +20,7 @@
     margin-top: 60px;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     background-color: #FFF;
 
@@ -28,43 +28,41 @@
     border-radius: 5px;
 }
 
-.card-header {
-    width: 100%;
-    height: 30%;
+.aside-card {
+    width: 45%;
+    height: 100%;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     background-color: var(--color-background);
 }
 
-.card-header h1 {
+.aside-card p {
     font-family: Ubuntu;
     font-weight: 700;
-    font-size: 2.8rem;
+    font-size: 2.2rem;
 
-    max-width: 320px;
+    max-width: 80%;
     
     color: #000;
-    text-align: left;
+    text-align: center;
 
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
-.card-header > img {
-    width: 30%;
-    height: 80%;
+.aside-card > img {
+    width: 80%;
+    height: 30%;
 
     object-fit: contain;
 }
 
-.card-especifications{
+.aside-card-slices{
     display: flex;
-    flex-direction: row;
-
-    height: 100%;
+    flex-direction: column;
 
     align-items: center;
 
@@ -73,47 +71,52 @@
     gap: 15px;
 }
 
-.card-especifications section{
-    width: 33%;
+.aside-card-slices > img{
+    width: 80%;
     height: 80%;
 
+    object-fit: contain;
+}
+
+.aside-card-slices a{
+    font-size: 2rem;
+
+    font-family: Ubuntu;
+}
+
+.images-carousel{
+    height: 100%;
+    width: auto;
+}
+
+#items{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-   
-    gap: 20px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
-.card-especifications h2{
-    text-align: center;
+#items::-webkit-scrollbar{
+    display: none;
 }
 
-.card-especifications p{
-    font-size: 1.8rem;
+.image-item {
+    flex: none;
+    padding: 0px;
 
-    text-align: center;
+    width: 50%;
+    height: 46rem;
+
+    scroll-snap-align: start;
+    pointer-events: none;
+    object-fit: contain;
 }
 
-.product-ingredients div{
-    background-color: #FFF;
-    color: #000;
-
-    border: 3px solid #BE9D29;
-    border-radius: 5px;
-
-    width: min-content;
+.image-item img {
+    width: 100%;
+    height: 100%;
     
-    padding: 5px 10px;
-
-    margin-bottom: 20px;
-}
-
-.product-ingredients div h1{
-    margin-bottom: 0px;
-}
-
-.product-slices > img{
-    width: 100px;
-
-    object-fit: cover;
+    margin: 0px;
 }

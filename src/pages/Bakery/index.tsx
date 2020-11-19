@@ -21,10 +21,10 @@ import './styles_filter_items.css';
 
 interface Data{
     id: number
-    image: string;
-    image_url: string;
+    images: string;
+    splited_images: string;
     name: string;
-    ingredients: string;
+    description: string;
     disponibility: boolean;
     slices: number;
     type: string;
@@ -40,8 +40,8 @@ interface Item{
 interface Product {
   id: number;
   name: string;
-  image: string;
-  image_url: string;
+  images: string;
+  splited_images: string[];
   disponibility: boolean;
   type: string;
   slices: number;
@@ -78,17 +78,13 @@ function Bakery() {
       setData(response.data);
     })
 }, [productId]);
-  
-  async function addItemToTheCart(product:Product) {
-    dispatch(addItem(product))
-  }
 
   return (
     <div id="page-bakery">
         <PageHeader />
 
         { isDetailVisible && 
-          <ProductDetail title={data.name} image={data.image_url} slices={data.slices} onClick={() => setIsDetailVisible(!isDetailVisible)} ingredients={data.ingredients} holeProduct={data} addToTheCart={addItemToTheCart}/> 
+          <ProductDetail images={data.splited_images[0]} slices={data.slices} onClick={() => setIsDetailVisible(!isDetailVisible)} description={data.description}/> 
         }
         <div className="bakery-main">
             <section className="filters">
@@ -99,7 +95,7 @@ function Bakery() {
                 <IoIosArrowForward size={22} color="#000" />
                 
                 {items.map(item => (
-                  <div key={String(item.id)} className="filters-item" 
+                  <div key={String(item.id)} className="filters-item"
                     onClick={() => {
                       setProductType(item.title)
                     }}>
@@ -115,13 +111,11 @@ function Bakery() {
             
             <div className="bakery-cards">
               {cars.map((product:Product) => (
-                <ProductCard key={String(product.id)} name={product.name} image={product.image_url} cost={product.cost} disponibility={product.disponibility} holeProduct={product}
+                <ProductCard key={String(product.id)} name={product.name} image={product.splited_images[1]} cost={product.cost} disponibility={product.disponibility}
                   onClickDetailButton={() => {
                     setIsDetailVisible(!isDetailVisible)
                     setProductId(String(product.id))
                   }}
-                  
-                  onClickShop={addItemToTheCart}
                   />
               ))}
             </div>

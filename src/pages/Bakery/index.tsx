@@ -22,7 +22,7 @@ import './styles_filter_items.css';
 interface Data{
     id: number
     images: string;
-    splited_images: string;
+    splited_images: string[];
     name: string;
     description: string;
     disponibility: boolean;
@@ -76,6 +76,7 @@ function Bakery() {
   useEffect(() =>{
     api.get(`products/${productId}`).then(response =>{ 
       setData(response.data);
+      console.log(response.data)
     })
 }, [productId]);
 
@@ -84,7 +85,7 @@ function Bakery() {
         <PageHeader />
 
         { isDetailVisible && 
-          <ProductDetail images={data.splited_images[0]} slices={data.slices} onClick={() => setIsDetailVisible(!isDetailVisible)} description={data.description}/> 
+          <ProductDetail images={data.splited_images} slices={data.slices} onClick={() => setIsDetailVisible(!isDetailVisible)} description={data.description}/> 
         }
         <div className="bakery-main">
             <section className="filters">

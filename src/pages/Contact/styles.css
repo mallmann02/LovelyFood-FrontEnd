@@ -9,80 +9,75 @@
 }
 
 .contact-main{
-    position: block;
-    margin-top: 200px;
+    height: max-content;
+
+    margin-top: 300px;
     
     display: flex;
     flex-direction: row;
 
     justify-content: center;
     align-items: center;
+
+    margin-right: 50px;
+    margin-left: 0px;
 }
 
-.contact-main > img{
-    width: 650px;
-    height: 650px;
+.contact-main #cellphone-screen-img {
+    width: 420px;
+    height: 85%;
+
+    object-fit: contain;
 }
 
-.contact-form {
-    margin-left: 50px;
+.contact-main #arrow-img{
+    width: 300px;
+    height: 40%;
 
+    margin-top: -100px;
+
+    object-fit: contain;
+
+    margin-left: 0px;
+}
+
+#carousel{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    width: 33%;
+
+    margin-top: 50px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
-form input + label{
-    margin-top: 15px;
+#carousel::-webkit-scrollbar{
+    display: none;
 }
 
-.contact-form form{
-    margin-top: 20px;
+.carousel-item{
+    flex: none;
+    padding: 0px;
 
-    color: var(--color-text-title);
+    width: 100%;
+    height: 47rem;
+
+    scroll-snap-align: start;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+.carousel-item > img{
+    width: 100%;
+    height: 100%;
     
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form h3{
-    color: var(--color-text-title);
-
-    font-size: 3rem;
-    font-weight: 500;
-}
-
-.contact-form form input {
-    background-color: #F1DEF1;
-    
-    height: 4.5rem;
-    width: 30rem;
-
-    border: 2px solid var(--color-text-title);
-    border-radius: 5px;
-
-    padding-left: 10px;
-}
-
-.contact-form form textarea {
-    background-color: #F1DEF1;
-    
-    min-height: 10rem;
-
-    border: 2px solid var(--color-text-title);
-    border-radius: 5px;
-
-    padding-left: 10px;
-    padding-top: 10px;
-
-    overflow: hidden;
-    
-    resize: vertical;
-    max-height: 13rem;
+    margin: 0px;
 }
 
 .contact-footer {
-   margin-top: 50px;
    padding: 20px;
 
    display: flex;
@@ -140,7 +135,7 @@ form input + label{
 @media (max-width: 1400px) {
     
     .contact-main{
-        margin-top: 300px;
+        margin-top: 550px;
     }
     
     .contact-main > img {

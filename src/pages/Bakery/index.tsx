@@ -12,24 +12,9 @@ import { IoIosArrowForward } from 'react-icons/io';
 import api from '../../services/api';
 
 import { getAllCars } from '../../store/fecthAction';
-import { addItem } from '../../store/cart';
-
-import generateUniqueId from '../../utils/generateUniqueId';
 
 import './styles.css';
 import './styles_filter_items.css';
-
-interface Data{
-    id: number
-    images: string;
-    splited_images: string[];
-    name: string;
-    description: string;
-    disponibility: boolean;
-    slices: number;
-    type: string;
-    cost: number;
-}
 
 interface Item{
   id: number;
@@ -46,6 +31,7 @@ interface Product {
   type: string;
   slices: number;
   cost: number;
+  description: string;
 }
 
 function Bakery() {
@@ -53,12 +39,12 @@ function Bakery() {
   const [isDetailVisible, setIsDetailVisible] = useState<boolean>(false);
 
   const [items, setItems] = useState<Item[]>([]);
-  // const [products, setProducts] = useState<Product[]>([]);
 
   const [productType, setProductType] = useState<string>('Torta');
-  const [productId, setProductId] = useState<string>('');
 
-  const [data, setData] = useState<Data>({} as Data);
+  const [images, setImages] = useState<string[]>([])
+  const [description, setDescription] = useState("")
+  const [slices, setSlices] = useState(0)
 
   const dispatch = useDispatch()
   const cars = useSelector((state: RootStateOrAny) => state.cars)
@@ -73,19 +59,20 @@ function Bakery() {
     dispatch(getAllCars(productType))
   }, [productType, dispatch])
 
-  useEffect(() =>{
-    api.get(`products/${productId}`).then(response =>{ 
-      setData(response.data);
-      console.log(response.data)
-    })
-}, [productId]);
-
   return (
     <div id="page-bakery">
         <PageHeader />
 
         { isDetailVisible && 
-          <ProductDetail images={data.splited_images} slices={data.slices} onClick={() => setIsDetailVisible(!isDetailVisible)} description={data.description}/> 
+          <ProductDetail image={images} slices={slices} onClick={() => setIsDetailVisible(!isDetailVisible)} description={description}>
+
+            {images.map(pic =>(
+              <div className="image-item-product-detail">
+                <img src={pic} alt="product-picture"/>
+              </div>
+            ))}
+
+          </ProductDetail> 
         }
         <div className="bakery-main">
             <section className="filters">
@@ -112,10 +99,12 @@ function Bakery() {
             
             <div className="bakery-cards">
               {cars.map((product:Product) => (
-                <ProductCard key={String(product.id)} name={product.name} image={product.splited_images[1]} cost={product.cost} disponibility={product.disponibility}
+                <ProductCard key={String(product.id)} name={product.name} image={product.splited_images} cost={product.cost} disponibility={product.disponibility}
                   onClickDetailButton={() => {
                     setIsDetailVisible(!isDetailVisible)
-                    setProductId(String(product.id))
+                    setDescription(product.description)
+                    setImages(product.splited_images)
+                    setSlices(product.slices)
                   }}
                   />
               ))}

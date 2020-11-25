@@ -1,4 +1,6 @@
 import React from 'react';
+import { AnyAction } from 'redux';
+
 import { IoMdArrowRoundDown } from 'react-icons/io';
 
 import PageHeader from '../../components/PageHeader';
@@ -10,13 +12,12 @@ import curvedArrow from '../../assets/images/seta_curvada.png';
 import instagramPost from '../../assets/images/lovelyfood_instagram-post.jpg';
 
 import './styles.css';
-import { AnyAction } from 'redux';
 
 function Contact() {
   
   function handleScrolling(e: AnyAction) {
     if (e.deltaY > 0){
-        e.target.scrollBy(300, 0) 
+        e.target.scrollBy(300, 0)
     } else {
         e.target.scrollBy(-300, 0)
     }
@@ -32,7 +33,7 @@ function Contact() {
 
         <img id="arrow-img" src={curvedArrow} alt="curved_arrow"/>
 
-        <div id="carousel" onWheel={handleScrolling}>
+        <div id="carousel" onWheel={handleScrolling} >
                 <div className="carousel-item">
                     <img src={instagramPost} alt={"img"}/>       
                 </div>

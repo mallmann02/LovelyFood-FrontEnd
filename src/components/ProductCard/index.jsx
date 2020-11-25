@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiMoreHorizontal, FiShoppingBag } from 'react-icons/fi';
+import { FiMoreHorizontal } from 'react-icons/fi';
 
 import './styles.css';
 
@@ -11,7 +11,7 @@ const ProductCard = ({onClickDetailButton, name, disponibility, cost, image}) =>
               <FiMoreHorizontal size={20} onClick={onClickDetailButton} cursor="pointer"/>
           </section>
           
-          <img src={image} alt={name+" Photo"} width={120} height={120}/>
+          <img src={image[0]} alt={name+" Photo"}/>
           
           <a className="product-name">{name}</a>
 

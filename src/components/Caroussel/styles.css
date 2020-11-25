@@ -1,7 +1,7 @@
 #items-wrapper{
     width: 100vw;
 
-    margin-top: 12rem;
+    margin-top: 14rem;
 }
 
 #items{
@@ -39,6 +39,18 @@
 @media (max-width: 720px) {
     .item{
         height: 50rem;
+    }
+}
+
+@media (max-width: 540px){
+    #items-wrapper{
+        width: 100vw;
+    
+        margin-top: 6rem;
+    }
+    
+    .item{
+        width: 100%;
     }
 }
 

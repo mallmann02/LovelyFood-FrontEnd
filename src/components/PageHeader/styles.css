@@ -57,14 +57,6 @@
     text-shadow:0px 0px 5px #fff;
     transition: background 0.5s; 
     }
- 
-    #page-header li:hover ul, #page-header li.over ul{display:block;}
-    
-    #page-header li ul li{
-        border:1px solid #04fd2e; 
-        display:block; 
-        width:150px;
-    }
 
     #page-header .shopping-cart-link {
        margin-right: 70px;
@@ -81,5 +73,41 @@
     @media (max-width: 1400px){
         #page-header li a{
             font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 540px){
+        
+        #page-header{
+            background-image: url('../../assets/images/topbarImage-mobile.jpg');
+            
+            height: 15vh;
+        }
+        
+        nav {
+            display: none;
+        }
+
+        #page-header g{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: unset;
+            padding: 10px;
+        }
+
+        .toggle-one,
+        .toggle-two,
+        .toggle-three{
+            background-color: #fff;
+            height: 5px;
+            width: 100%;
+            margin: 6px auto;
+        }
+
+        .menu-toggle{
+            width: 40px;
+            height: 30px;
+            margin-left: 20px;
         }
     }

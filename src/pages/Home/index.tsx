@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import Carrousel from '../../components/Caroussel';
@@ -24,7 +24,7 @@ function Home() {
             marginRight:5, 
             marginLeft:5}
             }/> 
-          para conhecer os doces.
+          para conhecer os doces
         </p>
       </div>
 

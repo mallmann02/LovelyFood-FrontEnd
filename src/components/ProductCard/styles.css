@@ -10,7 +10,6 @@
     border: 5px solid #BE9D29;
     border-radius: 5px;
 
-    padding-top: 10px;
     align-items: center;
 
     transition: all 0.4s ease;
@@ -19,12 +18,17 @@
 
 #product-card:hover {
     height: 280px;
+    width: 260px;
     transform: scale(1.1);
+    z-index: 12;
+}
+
+#product-card:hover .card-header .action-button-header {
+    width: 52%;
 }
 
 #product-card > a {
     position: relative;
-    margin-top: 10px;
     
     font-size: 2rem;
     font-family: Ubuntu;
@@ -44,23 +48,53 @@
     padding-left: 7px;
 }
 
-#product-card > img {
-    width: 50%;
-    height: 50%;
+#product-card .card-header > img {
+    width: 100%;
+    height: 100%;
 
     object-fit: contain;
 
-    margin-top: -15px;
+    padding: 0px;
 }
 
-.card-actions {
+.card-header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    padding: 0px 10px;
-
+    justify-content: center;
+    height: 52%;
     width: 100%;
+}
+
+.card-header .action-button-header {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 10;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    opacity: 0.95;
+
+    gap: 5px;
+
+    font-size: 1.4rem;
+
+    color: #000;
+    font-weight: 400;
+    
+    background-color: var(--color-background);
+    border-radius: 5px;
+    
+    width: 42%;
+    height: fit-content;
+    
+    padding: 1px 3px;
+
+    transition: all 0.8s;
 }
 
 .product-info {

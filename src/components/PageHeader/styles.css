@@ -103,11 +103,92 @@
             height: 5px;
             width: 100%;
             margin: 6px auto;
+
+            transition: 0.6s;
         }
 
         .menu-toggle{
             width: 40px;
             height: 30px;
             margin-left: 20px;
+
+            cursor: pointer;
+        }
+
+        .on{
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #FFF;
+
+            z-index: 10; 
+        }
+
+        #page-header g.on{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page-header .on .page-img{
+           display: none;
+        }
+
+        .on nav{
+            display: block;
+
+            height: min-content;
+        }
+
+        #page-header .on li{
+            width: 100vw;
+            margin-top: 0px;
+
+            position: unset; 
+
+            float: none;
+            margin-left: 0px;
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .on .menu-toggle{
+            position: absolute;
+            right: 25px;
+            top: 15px;
+        }
+
+        .on .toggle-one{
+           transform: rotate(45deg) translate(7px, 7px);
+           background-color: var(--color-background);
+        }
+
+        .on .toggle-two{
+            opacity: 0;
+        }
+
+        .on .toggle-three{
+            transform: rotate(-45deg) translate(8px, -10px); 
+            background-color: var(--color-background);
+        }
+        
+        .on nav ul{
+            display: block;
+            text-align: center;
+        }
+
+        #page-header .on li a{
+            transition: 0.5s;
+            font-size: 3rem;
+            line-height: 8rem;
+            display: block;
+            width: 100vw;
+            border-radius: 0px;
         }
     }

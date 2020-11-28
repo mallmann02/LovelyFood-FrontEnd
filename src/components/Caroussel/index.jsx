@@ -3,7 +3,7 @@ import React from 'react';
 import './styles.css';
 
 const Carrousel = () =>{
-        
+    
     function handleScrolling(e) {
         if (e.deltaY > 0){
             e.target.scrollBy(300, 0) 

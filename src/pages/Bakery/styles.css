@@ -29,3 +29,9 @@
     grid-template-columns: repeat(3, 250px);
     gap: 28px;
 }
+
+@media (max-width: 540px){
+    .bakery-cards {
+        grid-template-columns: repeat(2, min-content);
+    }
+}

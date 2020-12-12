@@ -79,9 +79,18 @@
     @media (max-width: 540px){
         
         #page-header{
-            background-image: url('../../assets/images/topbarImage-mobile.jpg');
+            background-image: none;
+            background-color: #FFF;
             
-            height: 15vh;
+            height: 12vh;
+            box-shadow: 2px 0px 8px 2px #000;
+        }
+
+        #page-header img{
+            width: 8rem;
+            height: 8rem;
+
+            margin-left: 0px;
         }
         
         nav {
@@ -92,14 +101,15 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: unset;
+            flex-direction: row-reverse;
+            align-items: center;
             padding: 10px;
         }
 
         .toggle-one,
         .toggle-two,
         .toggle-three{
-            background-color: #fff;
+            background-color: var(--color-background);
             height: 5px;
             width: 100%;
             margin: 6px auto;
@@ -110,7 +120,8 @@
         .menu-toggle{
             width: 40px;
             height: 30px;
-            margin-left: 20px;
+            margin-right: 20px;
+            margin-left: 0px;
 
             cursor: pointer;
         }

@@ -113,7 +113,27 @@
     font-family: Ubuntu;
     font-weight: 700;
 
-    margin-top: 15px;
+    margin-top: 20px;
+}
+
+@media (max-width: 540px){
+    #product-card{
+        width: 200px;
+        height: 220px;
+    }
+
+    #product-card:hover{
+        height: 230px;
+        width: 205px;
+        transform: scale(1.1);
+        z-index: 12;
+    }
+
+    .product-info{
+        font-size: 1.7rem;
+        padding: 0px 12px;
+        margin-top: 13px;
+    }
 }
 
 

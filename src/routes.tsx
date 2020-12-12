@@ -1,12 +1,28 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { isAuthenticated } from './services/auth';
+
+import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Bakery from './pages/Bakery';
 import ShoppingCart from './pages/ShoppingCart';
 import Admin from './pages/Admin';
+import Logon from './pages/Logon';
+
+const PrivateRoute = ({ component: Component, ...rest }:any) => (
+    <Route
+      {...rest}
+      render={props =>
+        isAuthenticated() ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/logon", state: { from: props.location } }} />
+        )
+      }
+    />
+  );
 
 function Routes() {
     return (
@@ -19,7 +35,9 @@ function Routes() {
 
             <Route path="/shopping-cart" component={ShoppingCart}/>
 
-            <Route path='/admin' component={Admin}/>
+            <Route path="/logon" component={Logon}/>
+
+            <PrivateRoute path="/admin" component={Admin}/>
         </BrowserRouter>
     )
 }

@@ -1,0 +1,42 @@
+#page-logon{
+    background-color: #FFF;
+}
+
+#logon-container{
+    position: relative;
+    align-items: center;
+
+    padding: 80px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 70%;
+    height: auto;
+}
+
+#logon-container #form{
+   position: relative;
+   
+    display: flex;
+   flex-direction: column;
+   align-content: center;
+   
+   width: 400px;
+}
+
+#logon-container #form form{
+    margin-left: 20px;
+}
+
+#logon-container #form input{
+    font-size: 16px;
+
+    margin-top: 10px;
+}
+
+#logon-container #form h1{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}

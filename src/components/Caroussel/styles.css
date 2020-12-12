@@ -36,11 +36,6 @@
     margin: 0px;
 }
 
-@media (max-width: 720px) {
-    .item{
-        height: 50rem;
-    }
-}
 
 @media (max-width: 540px){
     #items-wrapper{
@@ -51,12 +46,20 @@
     
     .item{
         width: 100%;
+        height: 56rem;
     }
 }
 
-@media (min-height: 860px){
-    .item {
-        height: 74rem;
-        width: 50%;
+@media (max-width: 720px){
+    .item{
+        width: 100%;
+        height: 56rem;
     }
 }
+
+@media (max-width: 1380px) {
+    .item{
+        height: 46rem;
+    }
+}
+

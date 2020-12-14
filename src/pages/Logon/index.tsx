@@ -2,6 +2,8 @@ import React, {useState, FormEvent} from 'react';
 import api from '../../services/api';
 import { login } from '../../services/auth';
 
+import brandLogoImg from '../../assets/images/LogoImg.png';
+
 import './styles.css';
 
 import { useHistory } from 'react-router-dom';
@@ -30,32 +32,36 @@ const Logon = () =>{
     return(
         <div id="page-logon">
             <div id="logon-container">
-                <div id="form">
-                    <img />
+                <form className="logon-form" onSubmit={handleLogin}>
+                    <h1>Login</h1>
                     
-
-                    <form id="logon-form" onSubmit={handleLogin}>
-                        <h1>Faça seu login</h1>
-                        <input placeholder="Seu e-mail"
+                    <div className="input-block">
+                        <label>E-mail</label>
+                        <input placeholder="lovelyfood@contato.com"
                             type="email"
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                         />
+                    </div>
                         
-                        <input placeholder="Sua senha"
+                    <div className="input-block">
+                        <label>Senha</label>
+                        <input placeholder=""
                             type="password"
                             value={password}
                             onChange={e => setPassword(e.target.value)}
                         />
+                    </div>
 
-                        <button className="button" type="submit">
-                            Entrar
-                        </button>
-                    </form>
-                </div>
+                    <button className="button" type="submit">
+                        Entrar
+                    </button>
+                </form>
 
-                <div>
-                    <img />
+                <div className="brand-exposure">
+                    <img src={brandLogoImg}/>
+
+                    <label>Lovely Food &copy;</label>
                 </div>
             </div>
         </div>

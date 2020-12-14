@@ -1,42 +1,90 @@
 #page-logon{
-    background-color: #FFF;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url('../../assets/images/batedeira.jpg');
+    background-size: cover;
 }
 
 #logon-container{
-    position: relative;
     align-items: center;
-
-    padding: 80px;
+    justify-content: center;
 
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 
-    width: 70%;
-    height: auto;
+    width: 25%;
+    height: 100%;
+
+    background-color: #FFF;
+    gap: 7rem;
 }
 
-#logon-container #form{
-   position: relative;
-   
-    display: flex;
+.logon-form {
+   display: flex;
    flex-direction: column;
-   align-content: center;
+
+   align-items: center;
    
-   width: 400px;
+   width: 70%;
+   height: fit-content;
 }
 
-#logon-container #form form{
-    margin-left: 20px;
+.logon-form input {
+    width: 100%;
+    height: 4rem;
+
+    background-color: #DADADA;
+    border: none;
+    border-radius: 5px;
+
+    padding: 2rem;
 }
 
-#logon-container #form input{
+.logon-form .input-block+.input-block{
     font-size: 16px;
 
     margin-top: 10px;
 }
 
-#logon-container #form h1{
-    margin-top: 30px;
+.logon-form h1{
     margin-bottom: 15px;
+
+    font-size: 5rem;
+    color: black;
 }
+
+.logon-form button{
+    background-color: #1ed00efd;
+    color: #FFF;
+    border: none;
+    font-size: 2.4rem;
+    font-family: Poppins;
+
+    border-radius: 5px;
+
+    width: 40%;
+    
+    margin-top: 2rem;
+    padding: 2px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.logon-form button:hover{
+    opacity: 0.9;
+    transform: translateX(20px);
+}
+
+.brand-exposure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-exposure img{
+    width: 150px;
+
+    object-fit: cover;
+}
+
